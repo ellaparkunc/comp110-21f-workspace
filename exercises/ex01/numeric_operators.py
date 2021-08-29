@@ -2,12 +2,12 @@
 
 __author__ = "730330121"
 
-left: int = int(input("What is the left number? "))
-right: int = int(input("What is the right number? "))
-print("Left-hand side: " + str(left))
-print("Right-hand side: " + str(right))
+left_value: int = int(input("What is the left number? "))
+right_value: int = int(input("What is the right number? "))
+print("Left-hand side: " + str(left_value))
+print("Right-hand side: " + str(right_value))
 
-print(str(left) + " ** " + str(right) + " is " + str(left ** right))
-print(str(left) + " / " + str(right) + " is " + str(left / right))
-print(str(left) + " // " + str(right) + " is " + str(left // right))
-print(str(left) + " % " + str(right) + " is " + str(left % right))
+print(str(left_value) + " ** " + str(right_value) + " is " + str(left_value ** right_value))
+print(str(left_value) + " / " + str(right_value) + " is " + str(left_value / right_value))
+print(str(left_value) + " // " + str(right_value) + " is " + str(left_value // right_value))
+print(str(left_value) + " % " + str(right_value) + " is " + str(left_value % right_value))
