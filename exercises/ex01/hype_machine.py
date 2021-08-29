@@ -1,6 +1,6 @@
-"""Hype Machine"""
+"""Very Corny Complements."""
 
-"""author: 730330121"""
+__author__ = "730330121"
 
 name: str = input("What is your name? ")
 print("Wow, you're the bomb dot com, " + str(name) + ". ")
