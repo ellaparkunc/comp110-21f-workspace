@@ -20,6 +20,7 @@ def main() -> None:
             quit()
         if str(choice_0) == str("1"):
             global points
+            global j
             print(f"Hiya, {player}, where do you put your muddy boots? {NAMED_CONSTANT} ")
             choice_1: str = str(input("\"In mi stew cause they tastey gud!\" ? y or n "))
             if str(choice_1) == str("y"):
@@ -33,7 +34,7 @@ def main() -> None:
                     i = 0
                 if str(choice_6) == str("q"):
                     i = i + 1
-                    quit()
+                    j = j + 1
             if str(choice_1) == str("n"):
                 choice_2: str = str(input("All right, then where? On your wife's head? y or n "))
                 if str(choice_2) == str("y"):
@@ -115,5 +116,8 @@ def horse(h: int) -> int:
     print(f"Whoa, there bessy {player}! You have {h} horses! {NAMED_CONSTANT}")
     return(int(h + 1))
 
-if __name__ == "__main__":
-    main()
+
+j: int = 0
+while j < 1:
+    if __name__ == "__main__":
+        main()
