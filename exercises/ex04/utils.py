@@ -36,18 +36,18 @@ def is_equal(first_list: list[int], second_list: list[int]) -> bool:
     return True
 
 
-def max(ocean: list[int]) -> biggest_fish:
+def max(ocean: list[int]) -> int:
     """What is the largest number in this set."""
     if len(ocean) == 0:
         raise ValueError("max() arg is an empty List")
-    i: int = 0
-    count: int = 0
+    i: int = 1
+    greater: int = ocean[0]
     while i < len(ocean):
-        if ocean[i] > ocean[j]:
-            count += 1
-
-
+        if ocean[i] > greater:
+            greater = ocean[i]
+        i += 1
+    return(greater)
 
 
 if __name__ == "__main__":
-    print(max([1, 2, 3]))
+    print(max([3, 2, 1]))
