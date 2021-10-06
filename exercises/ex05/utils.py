@@ -18,13 +18,12 @@ def only_evens(xs: list[int]) -> list[int]:
 
 def sub(xs: list[int], start: int, end: int) -> list[int]:
     new: list[int] = []
-    i: int = start
-    x: int = xs[i]
     while start < end:
-        new.append(x)
+        new.append(xs[start])
         start += 1
+    print(new)
     return(new)
 
 
 if __name__ == "__main__":
-    only_evens([1, 2, 3, 4])
+    sub([10, 20, 30, 40], 1, 3)
