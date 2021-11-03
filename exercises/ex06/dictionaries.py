@@ -10,6 +10,7 @@ given: dict[str, str] = {"0": "a", "1": "b"}
 def invert(given: dict[str, str]) -> dict[str, str]:
     """Inverts a dictionary."""
     """What i want to do: take a and rename each """
+    """Turning a dictionary into a list."""
     inverted: dict[str, str] = {}
     c: list[str] = []
     for key in given:
@@ -24,12 +25,12 @@ def invert(given: dict[str, str]) -> dict[str, str]:
             if c[i] == c[n]:
                 count = count + 1
             n += 1
-
         i = i + 1
-
     count = count - len(c)
     if count > 0:
         raise KeyError("KeyError")
+        
+    """The actual inversion."""
     for key in given:
         inverted[given[key]] = key
     print(inverted)
