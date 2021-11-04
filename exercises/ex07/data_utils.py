@@ -27,7 +27,7 @@ def read_csv_rows(filename: str) -> list[dict[str, str]]:
     return result
 
 
-def column_values(table: list[dict[str, str]], column: str)-> list[str]:
+def column_values(table: list[dict[str, str]], column: str) -> list[str]:
     """Produce a list[str] of all values in a single column."""
     result: list[str] = []
     for row in table:
@@ -54,68 +54,41 @@ def head(given: dict[str, list[str]], N: int) -> dict[str, list[str]]:
     """Views first N rows of a column-based table."""
     answer: dict[str, list[str]] = {}
     
-    if N == 0:
-        for column in given:
-            empty_list: list[str] = []
-            answer[column] = empty_list
-        print(answer)
-        return(answer)
-    
-    i: int = 0
     for column in given:
+        if N >= len(given[column]):
+            return(given)
         listy: list[str] = []
-        for item in given[column]:
-            listy.append(item)
+        i: int = 0
+        while i < N:
+            listy.append(given[column][i])
+            i += 1
         answer[column] = listy
-        i += 1
-        if i >= N:
-            return(answer)
     return(answer)
 
 
-def select(hello: dict[str, list[str]], xs: list[str])-> dict[str, list[str]]:
+def select(hello: dict[str, list[str]], xs: list[str]) -> dict[str, list[str]]:
     """To produce a column-based table with only a specific subset of the original columns.""" 
+    answer_dict: dict[str, list[str]] = {}
+    for column_name in xs:
+        answer_dict[column_name] = hello[column_name]
+    return(answer_dict)
 
-    # def head(given: dict[str, list[str]], N: int) -> dict[str, list[str]]:
-    # """Views first N rows of a column-based table."""
-    # answer: dict[str, list[str]] = {}
-    
-    # # i: int = 0
-    # # while i > given:
-    # #     store_N: list[list[str]] = []
-    # #     store_N.append(given[i])
-    # #     for key in store_N:
-    # #         answer[key] = 
-    # #     i += 1
-    # # return(answer)
-    # if N == 0:
-    #     for column in given:
-    #         empty_list: list[str] = []
-    #         answer[column] = empty_list
-    #     print(answer)
-    #     return(answer)
-    # # i: int = 0
-    # for column in given:
-    #     listy: list[str] = []
-    #     i: int = 0
-    #     for item in given[column]:
-    #         listy.append(item)
-    #         i += 1
-    #         if i >= N:
-    #             answer[column] = listy
-    #             print(answer)
-    #             return(answer)
-    #     # answer[column] = listy
-    #     # i += 1
-    # #     if i > N:
-    # #         print(answer)
-    # #         return(answer)
-    # # return(answer)
+
+def concat(first: dict[str, list[str]], second: dict[str, list[str]]) -> dict[str, list[str]]:
+    """To combine two column-based dictionaries into one."""
+    combined: dict[str, list[str]] = {}
+    for column in first:
+        combined[column] = first[column]
+    for column in second:
+        if column in first:
+            combined[column] = first[column] + second[column]
+        else:
+            combined[column] = second[column]
+    return(combined)
 
 
 if __name__ == "__main__":
-    head(ayo, 3) 
-
+    head(ayo, 2) 
 # i += 1
 #         if i >= N:
 
