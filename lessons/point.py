@@ -6,7 +6,7 @@ class Point:
     y: float
 
     def __init__(self, x: float, y: float):
-        """Initializa a Point with its x, y components."""
+        """Initialize a Point with its x, y components."""
         self.x = x
         self.y = y
 
@@ -21,7 +21,6 @@ class Point:
         y: float = self.y * factor
         scaled_point: Point = Point(x, y)
         return(scaled_point)
-
 
 
 p0: Point = Point(1.0, 2.0)
